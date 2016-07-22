@@ -26,6 +26,7 @@ function all_media_gallery_content() {
 		'post_type' => 'attachment',
 		'orderby' => 'date',
 		'post_mime_type' => 'image',
+		'posts_per_page'   => 9999,
 	);
 
 	$query_args = apply_filters( 'all_media_gallery_query_args', $query_args );
