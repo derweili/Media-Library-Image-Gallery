@@ -7,7 +7,7 @@
 Plugin Name: Media Library Image Gallery
 Description: Display all Images in your Gallery as a WordPress Gallery
 Author: derweili
-Version: 0.1
+Version: 1.0.0
 Author URI: http://derweili.de/
 License:     GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -34,13 +34,13 @@ class Media_Library_Image_Gallery
 	private $gallery_shortcode;
 	private $gallery_order;
 
-	
+
 	function __construct()
 	{
 
 		// load register shortcode function
 		add_action( 'init', array( &$this, 'register_shortcode' ) );
-				
+
 	}
 
 	public function register_shortcode() {
@@ -101,8 +101,8 @@ class Media_Library_Image_Gallery
 			$this->image_ids_string = join( ',', $this->images ); // Join all image IDs from array to string
 
 			$gallery_order = apply_filters(	'mlig_gallery_order', 'DESC' );
-			 
-			$this->gallery_shortcode = '[gallery include="' . $this->image_ids_string . '" order="' . $gallery_order . '"]'; //Define Shortcode 
+
+			$this->gallery_shortcode = '[gallery include="' . $this->image_ids_string . '" order="' . $gallery_order . '"]'; //Define Shortcode
 
 			$this->gallery_shortcode = apply_filters( 'mlig_shortcode', $this->gallery_shortcode, $this->images, $this->image_ids_string );
 
