@@ -21,6 +21,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 
+define('MLIG_PlUGIN_URL', plugins_url( null, __FILE__ ) );
+define('MLIG_PlUGIN_DIRECTORY', __DIR__ );
+
 /**
 *  Plugin Class
 */
@@ -40,6 +43,10 @@ class Media_Library_Image_Gallery
 
 		// load register shortcode function
 		add_action( 'init', array( &$this, 'register_shortcode' ) );
+
+		require_once( MLIG_PlUGIN_DIRECTORY . '/inc/register-scripts.php');
+		require_once( MLIG_PlUGIN_DIRECTORY . '/inc/register-blocks.php');
+
 				
 	}
 
